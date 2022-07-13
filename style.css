@@ -4,8 +4,8 @@
 }
 
 body {
-  background-color: darkkhaki;
-}
+  background-image: linear-gradient(rgb(233, 233, 71), rgb(32, 32, 22))
+  }
 
 h1 {
   font-family: Verdana;
@@ -21,8 +21,14 @@ header {
   top: 0;
 }
 .img__logo{
-  width:30%;
-  height: 80%;
+  width:25%;
+  height: 75%;
+  transition:all 3s;
+  }
+  .img__logo:hover{
+    width: 30%;
+    height: 80%;
+    transform: rotate(360deg);
   }
  .header {
   list-style-type: none;
@@ -53,7 +59,20 @@ main {
   width: 80%;
   padding-bottom: 15px;
   margin-left: 10%;
+  animation-name: forwards;
+  animation-duration: 2s;
 }
+@keyframes forwards{
+  from{
+    height: 120%;
+    width: 120%;
+  }
+  to{
+    height: 500px;
+    width: 80%;
+  }
+}
+
 
 .videointro {
  padding-bottom: 2%;
@@ -64,8 +83,18 @@ main {
   font-size: 17px;
   border: 3px solid black;
   width: 70%;
+  animation-duration: 3s;
+  animation-name: slidein;
 }
-
+@keyframes slidein{
+  from{
+    margin-right:100%;
+    width: 300%;
+}
+to{
+  margin-right: 0%;
+}
+}
 
 /* Precios y Promociones */
 h4 {
@@ -80,7 +109,9 @@ h4 {
   display: flex;
   align-content: center;
   margin-left: 40%;
+
 }
+
 
 .tabla {
   display: flex;
@@ -91,17 +122,35 @@ h4 {
   margin-top: 1%;
   margin-right: 50%;
   margin-bottom: 2%;
+
 }
 
 .promociones {
   padding: 1.5%;
-  margin-left: 33%;
+}
+h4 .titlepromo{
+   font-size: 15px;
+   border: solid 2px;
+   background-color: cadetblue;
+   
 }
 
 .fotopromo {
   height: 700px;
   width: 400px;
+  animation: mymove 5s infinite;
 }
+#promo{animation-timing-function: ease-in-out;}
+
+
+@keyframes mymove{
+  from{
+   margin-left:0px
+  }
+  to{
+   margin-left:500px
+  }
+  }
 /* Galeria */
 .maingaleria{
   display: grid;
@@ -115,8 +164,11 @@ h4 {
   width: 250px;
   height: 250px;
   display: flex;
-}
-
+  transition: all 1s;
+  }
+  .fotosgaleria:hover{
+    transform: scale(1.2);
+  }
 
 /*contacto */
 .contacto{
@@ -128,11 +180,13 @@ h4 {
   align-items: center;
   margin-bottom: 15px;
   padding: 10px;
+
 }
 .form__content {
   display: flex;
   justify-content: center;
   width: 50%;
+
 }
 .formulario__content {
   display: flex;
@@ -143,16 +197,20 @@ h4 {
   font-size: 18px;
   border-radius: 5px;
   padding: 15px;
+ 
 }
+
 /* Quienes somos */
 .mainquienes{
   display: flex;
   justify-content: center;
   }
 
+
 .quienes__somos{
   font-size: 21px;
-  color: brown;
+  color: rgb(59, 6, 6);
+  text-align: center;
 
 }
 /* Footer */
@@ -190,10 +248,10 @@ h3 {
   text-decoration: none;
 }
 
-.redes li {
+.redes li a{
   list-style-type: none;
   text-decoration: none;
-  color: brown;
+  color: white;
   border: 2px solid gold;
   font-family: sans-serif;
   font-size: 15px;
@@ -251,8 +309,16 @@ h3 {
       }
 
       .img__logo{
-        width: 100px;
-        height: 150px;
+        width: 50%;
+        height: 50%;
+        transition:all 2s;
+
+      }
+      .img__logo:hover{
+        width: 70%;
+        height: 50%;
+        transform: rotate(360deg);
+
       }
       .introduction{
        justify-content: center;
